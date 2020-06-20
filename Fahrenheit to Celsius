@@ -1,0 +1,12 @@
+
+
+S = int(input())
+E = int(input())
+W = int(input())
+
+curr_temp = S
+
+while curr_temp <= E:
+    c = 5/9 * (curr_temp-32)
+    print(curr_temp,"\t",int(c))
+    curr_temp = curr_temp+W
