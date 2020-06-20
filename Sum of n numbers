@@ -1,0 +1,10 @@
+number = int(input())
+
+sum = 0
+value = 1
+
+while (value <= number):
+    sum = sum + value
+    value = value + 1
+
+print(sum)
