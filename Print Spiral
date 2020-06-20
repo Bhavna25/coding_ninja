@@ -1,0 +1,96 @@
+from sys import stdin
+
+def spiralPrint(arr, rsize, csize):
+    # Please add your code here
+ 
+    
+    count = 0
+    r_start = 0
+    r_end = rsize - 1
+    c_start= 0
+    c_end = csize - 1
+    
+    while r_start<=r_end and c_start<=c_end:
+        
+        
+    
+        for i in range(c_start, c_end+1):
+            print(arr[r_start][i], end = " ")
+        r_start += 1
+        
+        if r_start>r_end or c_start>c_end:
+            break
+
+        for i in range(r_start, r_end+1):
+            print(arr[i][c_end], end = " ")
+        c_end -= 1
+        
+        if r_start>r_end or c_start>c_end:
+            break
+
+        for i in range(c_end, c_start-1, -1):
+            print(arr[r_end][i], end = " ")
+        r_end -= 1
+        
+        if r_start>r_end or c_start>c_end:
+            break
+            
+        
+        for i in range(r_end, r_start-1, -1):
+            print(arr[i][c_start], end = " ")
+        c_start += 1
+        
+            
+    #Your code goes here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Taking Input Using Fast I/O
+def take2DInput() :
+    li = stdin.readline().rstrip().split(" ")
+    nRows = int(li[0])
+    mCols = int(li[1])
+    
+    if nRows == 0 :
+        return list(), 0, 0
+    
+    mat = [list(map(int, input().strip().split(" "))) for row in range(nRows)]
+    return mat, nRows, mCols
+
+
+#main
+t = int(stdin.readline().rstrip())
+
+while t > 0 :
+
+    mat, nRows, mCols = take2DInput()
+    spiralPrint(mat, nRows, mCols)
+    print()
+
+    t -= 1
